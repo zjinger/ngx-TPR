@@ -1,0 +1,157 @@
+<h1>表头固定左右滑动</h1>
+<div class="sl-table-container">
+    <div class="sl-table__fixed-left-wrapper">
+        <div class="sl-table__header-wrapper">
+            <table class="table table-bordered table-header-fixed" style="width: 110px;">
+                <col width="50">
+                <col width="60">
+                <tr class="tr-head">
+                    <td class="checkbox">
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td class="serial">序号</td>
+                </tr>
+            </table>
+        </div>
+        <div class="sl-table__body-wrapper is-fixed" #fixedRowWrapper>
+            <table class="table table-bordered table-hover" cellspacing="0" cellpadding="0" style="width: 110px;">
+                <colgroup>
+                    <col width="50">
+                    <col width="60">
+                </colgroup>
+                <tr *ngFor="let item of data;index as i">
+                    <td class="serial"><input type="checkbox" name="" id=""></td>
+                    <td class="serial">{{i+1}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="sl-table__header-wrapper">
+        <div class="sl-table__header-inner" #tableHeader>
+            <table class="table table-bordered table-header-fixed" cellspacing="0" cellpadding="0" #listTableHeader>
+                <colgroup>
+                    <col width="50">
+                    <col width="60">
+                    <col width="160">
+                    <col width="150">
+                    <col width="150">
+                    <col width="120">
+                    <col width="180">
+                    <col width="180">
+                    <col width="150">
+                    <col width="150">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col name="gutter" width="8">
+                </colgroup>
+                <thead>
+                    <tr class="tr-head">
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td class="el-table_1_column_1 serial">序号</td>
+                        <td>手机型号</td>
+                        <td>Geekbench 4单核</td>
+                        <td>Geekbench 4多核</td>
+                        <td>圆周率</td>
+                        <td>RAR多线程（KB/s）</td>
+                        <td>RAR单线程（KB/s）</td>
+                        <td>GFXBench曼哈顿</td>
+                        <td>GFXBench霸王龙 </td>
+                        <td>GFXBench曼哈顿ES3.1</td>
+                        <td>3DMark Sling Shot test 1</td>
+                        <td>3DMark Sling Shot test 2</td>
+                        <td>AndroBench持续读取</td>
+                        <td>AndroBench持续写入</td>
+                        <td>AndroBench随机读取</td>
+                        <td style="border-right: 1px solid #C0D8FE;">AndroBench随机写入</td>
+                        <td class="gutter"></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="sl-table__body-wrapper" style="height: 500px;">
+        <div class="sl-table__body-inner" #tableContent>
+            <table class="table table-bordered table-hover" #listTable cellspacing="0" cellpadding="0">
+                <colgroup>
+                    <col width="50">
+                    <col width="60">
+                    <col width="160">
+                    <col width="150">
+                    <col width="150">
+                    <col width="120">
+                    <col width="180">
+                    <col width="180">
+                    <col width="150">
+                    <col width="150">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                    <col width="180">
+                </colgroup>
+                <tbody>
+                    <tr *ngFor="let item of data;index as i">
+                        <td class="checkbox"></td>
+                        <td class="serial"></td>
+                        <td>{{item.a}}</td>
+                        <td>{{item.b}}</td>
+                        <td>{{item.c}}</td>
+                        <td>{{item.d}}</td>
+                        <td>{{item.e}}</td>
+                        <td>{{item.f}}</td>
+                        <td>{{item.g}}</td>
+                        <td>{{item.h}}</td>
+                        <td>{{item.i}}</td>
+                        <td>{{item.j}}</td>
+                        <td>{{item.k}}</td>
+                        <td>{{item.l}}</td>
+                        <td>{{item.m}}</td>
+                        <td>{{item.n}}</td>
+                        <td>{{item.o}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="sl-table__filter-header-wrapper" *ngIf="filterHeaderPanelStatus">
+        <div class="title">
+            <span>请选择需显示列</span>
+        </div>
+        <ul>
+            <li class="">
+                <label for="quanxuan0">
+                    <input id="quanxuan0" name="xuanze0" type="checkbox" value="0" /> 全选
+                </label>
+            </li>
+            <li class="">
+                <label for="quanxuan1">
+                    <input id="quanxuan1" name="xuanze1" type="checkbox" value="1" /> 航标名称
+                </label>
+            </li>
+            <li class="">
+                <label for="quanxuan2">
+                    <input id="quanxuan2" name="xuanze2" type="checkbox" value="2" /> 航标编号
+                </label>
+            </li>
+            <li class="">
+                <label for="quanxuan3">
+                    <input id="quanxuan3" name="xuanze3" type="checkbox" value="3" /> 标别
+                </label>
+            </li>
+        </ul>
+        <div class="footer">
+            <button type="button" (click)="closeFilterHeaderConfig()">取消</button>
+            <button type="button" (click)="saveFilterHeaderConfig()">确定</button>
+        </div>
+    </div>
+    <div class="sl-table__fixed-right-wrapper">
+        <a href="javascript:void(0)" (click)="expandFilterHeader()"><i class="handle-icon"></i></a>
+    </div> -->
+</div>

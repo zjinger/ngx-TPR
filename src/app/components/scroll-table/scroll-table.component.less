@@ -1,0 +1,217 @@
+.table {
+    table-layout: fixed;
+    border-spacing: 0;
+    margin-bottom: 0;
+
+    tr {
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 6px 4px;
+
+            &.serial {
+                width: 60px;
+                min-width: 60px;
+                text-align: center;
+            }
+
+            &.gutter {
+                border-left: none;
+            }
+
+            &.handle {
+                border: none;
+            }
+        }
+
+        &.tr-head {
+            td {
+                text-align: center;
+                background-color: #E4EFFF;
+            }
+        }
+
+    }
+}
+
+.table-bordered {
+    tr {
+        td {
+            border-left: 1px solid #C0D8FE;
+            border-bottom: 1px solid #C0D8FE;
+
+            &:last-child {
+                border-right: 1px solid #C0D8FE;
+            }
+        }
+
+        &:first-child {
+            td {
+                border-top: 1px solid #C0D8FE;
+            }
+        }
+    }
+}
+
+.sl-table-container {
+    width: 1200px;
+    margin: 50px auto;
+    position: relative;
+
+    .sl-table__fixed-left-wrapper {
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.12);
+        box-shadow: 0 0 10px rgba(0,0,0,.12);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 526px;
+
+        .sl-table__header-wrapper {
+            margin-top: 1px;
+
+            .table {
+                tr {
+                    td {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .sl-table__header-wrapper {
+        overflow: hidden;
+
+        .sl-table__header-inner {
+            // 隐藏滚动条，页面div 保持横向滚动，但是不支持ie9 ，为了兼容性所以没有使用，ts 中同步滚动
+            // 而是动态设置 sl-table__header-inner 的margin-left  实现滚动效果
+            // overflow: -moz-scrollbars-none;
+            // overflow-x: auto;
+            // -ms-overflow-style: none;
+
+            // &::-webkit-scrollbar {
+            //     width: 0 !important;
+            //     display: none;
+            // }
+        }
+
+
+    }
+
+    .sl-table__body-wrapper {
+        // margin-top: -1px;
+        overflow: hidden;
+        height: 500px;
+
+        &.is-fixed {
+            height: 491px;
+
+            .table {
+                tr {
+                    td {
+                        background-color: #ffffff;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+
+        .sl-table__body-inner {
+            overflow: auto;
+            height: 100%;
+            width: 100%;
+            &::-webkit-scrollbar-track {
+                border-radius: 20px;
+            }
+            &::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                background-color: rgba(144, 146, 152, .3);
+            }
+
+            .table {
+                tr {
+                    &:first-child {
+                        td {
+                            border-top: none;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .sl-table__filter-header-wrapper {
+        position: absolute;
+        height: 516px;
+        width: 210px;
+        top: 0;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 0 14px 0 rgba(52, 60, 70, .14);
+        -webkit-box-shadow: 0 0 14px 0 rgba(52, 60, 70, .14);
+        border: 1px solid #e9e9e9;
+        z-index: 10;
+
+        .title {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        ul {
+            height: calc(100% - 100px);
+            margin: 10px 0 0 0;
+            list-style: none;
+            padding: 0 0 0 16px;
+
+            li {
+                display: block;
+                padding: 4px 8px 4px 0;
+            }
+        }
+
+        .footer {
+            text-align: center;
+
+            button {
+                display: inline-block;
+                padding: 4px 12px;
+                margin: 0px 12px;
+                outline: none;
+                border: 1px solid #dddddd;
+                background-color: #ffffff;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .sl-table__fixed-right-wrapper {
+        position: absolute;
+        right: 2px;
+        top: 0;
+        bottom: 0;
+        margin-top: 1px;
+        width: 32px;
+        height: 32px;
+        background-color: #E4EFFF;
+        text-align: center;
+        line-height: 35px;
+
+        .handle-icon {
+            background-image: url('../../../assets/img/handle-icon.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+    }
+
+}
