@@ -54,12 +54,12 @@
     }
 }
 
-.sl-table-container {
+.ngx-table-container {
     width: 1200px;
     margin: 50px auto;
     position: relative;
 
-    .sl-table__fixed-left-wrapper {
+    .ngx-table__fixed-left-wrapper {
         -webkit-box-shadow: 0 0 10px rgba(0,0,0,.12);
         box-shadow: 0 0 10px rgba(0,0,0,.12);
         position: absolute;
@@ -68,7 +68,7 @@
         bottom: 0;
         height: 526px;
 
-        .sl-table__header-wrapper {
+        .ngx-table__header-wrapper {
             margin-top: 1px;
 
             .table {
@@ -81,12 +81,12 @@
         }
     }
 
-    .sl-table__header-wrapper {
+    .ngx-table__header-wrapper {
         overflow: hidden;
 
-        .sl-table__header-inner {
+        .ngx-table__header-inner {
             // 隐藏滚动条，页面div 保持横向滚动，但是不支持ie9 ，为了兼容性所以没有使用，ts 中同步滚动
-            // 而是动态设置 sl-table__header-inner 的margin-left  实现滚动效果
+            // 而是动态设置 ngx-table__header-inner 的margin-left  实现滚动效果
             // overflow: -moz-scrollbars-none;
             // overflow-x: auto;
             // -ms-overflow-style: none;
@@ -100,7 +100,7 @@
 
     }
 
-    .sl-table__body-wrapper {
+    .ngx-table__body-wrapper {
         // margin-top: -1px;
         overflow: hidden;
         height: 500px;
@@ -118,7 +118,7 @@
             }
         }
 
-        .sl-table__body-inner {
+        .ngx-table__body-inner {
             overflow: auto;
             height: 100%;
             width: 100%;
@@ -147,7 +147,7 @@
         }
     }
 
-    .sl-table__filter-header-wrapper {
+    .ngx-table__filter-header-wrapper {
         position: absolute;
         height: 516px;
         width: 210px;
@@ -192,7 +192,7 @@
         }
     }
 
-    .sl-table__fixed-right-wrapper {
+    .ngx-table__fixed-right-wrapper {
         position: absolute;
         right: 2px;
         top: 0;

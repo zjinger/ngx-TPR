@@ -1,7 +1,8 @@
 <h1>表头固定左右滑动</h1>
-<div class="sl-table-container">
-    <div class="sl-table__fixed-left-wrapper">
-        <div class="sl-table__header-wrapper">
+<div class="ngx-table-container">
+    <!--头部固定的列+左侧需要固定的列-->
+    <div class="ngx-table__fixed-left-wrapper">
+        <div class="ngx-table__header-wrapper">
             <table class="table table-bordered table-header-fixed" style="width: 110px;">
                 <col width="50">
                 <col width="60">
@@ -13,7 +14,7 @@
                 </tr>
             </table>
         </div>
-        <div class="sl-table__body-wrapper is-fixed" #fixedRowWrapper>
+        <div class="ngx-table__body-wrapper is-fixed" #fixedRowWrapper>
             <table class="table table-bordered table-hover" cellspacing="0" cellpadding="0" style="width: 110px;">
                 <colgroup>
                     <col width="50">
@@ -26,8 +27,9 @@
             </table>
         </div>
     </div>
-    <div class="sl-table__header-wrapper">
-        <div class="sl-table__header-inner" #tableHeader>
+    <!--表头固定-->
+    <div class="ngx-table__header-wrapper">
+        <div class="ngx-table__header-inner" #tableHeader>
             <table class="table table-bordered table-header-fixed" cellspacing="0" cellpadding="0" #listTableHeader>
                 <colgroup>
                     <col width="50">
@@ -74,8 +76,9 @@
             </table>
         </div>
     </div>
-    <div class="sl-table__body-wrapper" style="height: 500px;">
-        <div class="sl-table__body-inner" #tableContent>
+    <!--主体内容-->
+    <div class="ngx-table__body-wrapper" style="height: 500px;">
+        <div class="ngx-table__body-inner" #tableContent>
             <table class="table table-bordered table-hover" #listTable cellspacing="0" cellpadding="0">
                 <colgroup>
                     <col width="50">
@@ -120,7 +123,8 @@
             </table>
         </div>
     </div>
-    <!-- <div class="sl-table__filter-header-wrapper" *ngIf="filterHeaderPanelStatus">
+    <!--表头过滤-->
+    <!-- <div class="ngx-table__filter-header-wrapper" *ngIf="filterHeaderPanelStatus">
         <div class="title">
             <span>请选择需显示列</span>
         </div>
@@ -151,7 +155,7 @@
             <button type="button" (click)="saveFilterHeaderConfig()">确定</button>
         </div>
     </div>
-    <div class="sl-table__fixed-right-wrapper">
+    <div class="ngx-table__fixed-right-wrapper">
         <a href="javascript:void(0)" (click)="expandFilterHeader()"><i class="handle-icon"></i></a>
     </div> -->
 </div>
